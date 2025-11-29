@@ -14,7 +14,7 @@ export const Benefits: React.FC = () => {
              <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb7d5b1d?auto=format&fit=crop&q=80" className="w-full h-full object-cover" alt="شجرة السدر" />
         </div>
         <div className="relative z-20 max-w-7xl mx-auto px-4 text-center">
-            <h1 className="text-4xl font-extrabold text-white sm:text-5xl">مدونة السدر النقي</h1>
+            <h1 className="text-4xl font-extrabold text-white sm:text-5xl">مدونة سدر الجوري</h1>
             <p className="mt-4 text-xl text-green-100 max-w-2xl mx-auto">دليلك الشامل لفوائد شجرة السدر، العناية بالشعر، والجمال الطبيعي</p>
         </div>
       </div>

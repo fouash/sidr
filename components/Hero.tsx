@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { ArrowLeft, Star, ShieldCheck, Sparkles } from 'lucide-react';
 
 interface HeroProps {
@@ -6,6 +6,21 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
+  const imageRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (imageRef.current) {
+        const scrolled = window.scrollY;
+        // Apply parallax effect: move image down slower than scroll speed
+        imageRef.current.style.transform = `translateY(${scrolled * 0.4}px)`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="relative overflow-hidden bg-nature-50">
       <div className="max-w-7xl mx-auto">
@@ -44,9 +59,10 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
       </div>
       
       {/* Decorative Image Side */}
-      <div className="lg:absolute lg:inset-y-0 lg:left-0 lg:w-1/2">
+      <div className="lg:absolute lg:inset-y-0 lg:left-0 lg:w-1/2 overflow-hidden">
         <img
-          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full opacity-90"
+          ref={imageRef}
+          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full opacity-90 will-change-transform"
           src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
           alt="أوراق السدر والعناية الطبيعية"
         />
