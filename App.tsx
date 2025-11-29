@@ -12,15 +12,33 @@ import { SidrSkin } from './components/SidrSkin';
 import { Contact } from './components/Contact';
 import { Page } from './types';
 
+// Helper to get title based on path
+const getPageTitle = (path: string) => {
+  if (path === '/') return 'سدر الجوري - الرئيسية';
+  if (path === '/products') return 'المتجر - سدر الجوري';
+  if (path === '/benefits') return 'مدونة الفوائد - سدر الجوري';
+  if (path === '/benefits/general') return 'ماهو السدر؟ معلومات شاملة - سدر الجوري';
+  if (path === '/benefits/hair') return 'السدر للشعر: الفوائد والخلطات - سدر الجوري';
+  if (path === '/benefits/skin') return 'السدر للوجه والجسم: نضارة وصفاء - سدر الجوري';
+  if (path === '/expert') return 'خبيرة الجمال - سدر الجوري';
+  if (path === '/about') return 'قصتنا - سدر الجوري';
+  if (path === '/contact') return 'تواصل معنا - سدر الجوري';
+  return 'سدر الجوري - للعناية الطبيعية';
+};
+
 // Wrapper component to handle routing state within Layout
 const AppContent: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [activePage, setActivePage] = useState<Page>(Page.HOME);
 
-  // Sync active page state with current URL
+  // Sync active page state and document title with current URL
   useEffect(() => {
     const path = location.pathname;
+    
+    // Update Title
+    document.title = getPageTitle(path);
+
     if (path.startsWith('/benefits')) {
       setActivePage(Page.BENEFITS);
     } else {

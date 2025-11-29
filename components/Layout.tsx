@@ -124,14 +124,17 @@ export const Layout: React.FC<LayoutProps> = ({ children, activePage, onNavigate
           ${isMobileMenuOpen ? 'translate-y-0 opacity-100 visible' : '-translate-y-2 opacity-0 invisible pointer-events-none'}
         `}>
           <div className="px-4 py-6 space-y-2 max-h-[calc(100vh-80px)] overflow-y-auto">
-            {navItems.map((item) => (
+            {navItems.map((item, index) => (
               <button
                 key={item.page}
                 onClick={() => {
                   onNavigate(item.page);
                   setIsMobileMenuOpen(false);
                 }}
-                className={`flex items-center w-full text-right px-4 py-4 rounded-xl text-lg font-medium transition-all ${
+                style={{ transitionDelay: `${isMobileMenuOpen ? index * 50 : 0}ms` }}
+                className={`flex items-center w-full text-right px-4 py-4 rounded-xl text-lg font-medium transition-all duration-300 transform ${
+                  isMobileMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
+                } ${
                   activePage === item.page
                     ? 'text-nature-700 bg-nature-50 border border-nature-100'
                     : 'text-gray-600 hover:text-nature-600 hover:bg-gray-50'
@@ -143,7 +146,12 @@ export const Layout: React.FC<LayoutProps> = ({ children, activePage, onNavigate
             ))}
              
              {/* Mobile Extra Actions */}
-             <div className="pt-4 mt-4 border-t border-gray-100 grid grid-cols-2 gap-4">
+             <div 
+               style={{ transitionDelay: `${isMobileMenuOpen ? navItems.length * 50 : 0}ms` }}
+               className={`pt-4 mt-4 border-t border-gray-100 grid grid-cols-2 gap-4 transition-all duration-300 transform ${
+                 isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+               }`}
+             >
                 <button className="flex flex-col items-center justify-center p-3 rounded-lg hover:bg-gray-50 text-gray-600 hover:text-nature-600 transition-colors">
                     <div className="bg-gray-100 p-2 rounded-full mb-2">
                         <ShoppingBag size={20} />
