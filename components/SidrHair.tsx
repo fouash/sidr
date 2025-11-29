@@ -1,12 +1,33 @@
 import React from 'react';
 import { Leaf, Clock, CheckCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { SEO } from './SEO';
 
 export const SidrHair: React.FC = () => {
   const navigate = useNavigate();
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "السدر للشعر: خلطات، زيوت، وفوائد شاملة",
+    "image": "https://images.unsplash.com/photo-1595156829732-4d6d67425178?auto=format&fit=crop&q=80",
+    "author": "سدر الجوري",
+    "publisher": {
+      "@type": "Organization",
+      "name": "سدر الجوري"
+    },
+    "description": "ملف كامل عن السدر للشعر: طريقة عمل ماسك السدر، مدة وضعه، فوائده للتكثيف والتطويل، وعلاج القشرة."
+  };
+
   return (
     <div className="bg-white">
+      <SEO 
+        title="السدر للشعر: خلطات، زيوت، وفوائد - سدر الجوري"
+        description="ملف كامل عن السدر للشعر: طريقة عمل ماسك السدر، مدة وضعه، فوائده للتكثيف والتطويل، وعلاج القشرة. تخلصي من التساقط بطرق طبيعية."
+        keywords="السدر للشعر, خلطة السدر, ماسك السدر, زيت السدر, كم مدة السدر, شامبو السدر, سدر للتكثيف"
+        schema={schema}
+        canonicalUrl="https://sidraljouri.com/benefits/hair"
+      />
       <div className="bg-nature-600 py-12 border-b border-nature-700">
         <div className="max-w-4xl mx-auto px-4 text-center text-white">
             <span className="bg-nature-500 px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase">العناية بالشعر</span>

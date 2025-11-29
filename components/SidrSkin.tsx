@@ -1,12 +1,33 @@
 import React from 'react';
 import { Sparkles, Droplet, Sun } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { SEO } from './SEO';
 
 export const SidrSkin: React.FC = () => {
   const navigate = useNavigate();
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "السدر للوجه والجسم: نضارة وصفاء طبيعي",
+    "image": "https://images.unsplash.com/photo-1570194065650-d99fb4b8ccb0?auto=format&fit=crop&q=80",
+    "author": "سدر الجوري",
+    "publisher": {
+      "@type": "Organization",
+      "name": "سدر الجوري"
+    },
+    "description": "فوائد السدر للبشرة، ماسك السدر للوجه، وطريقة الاغتسال بالسدر للجسم. حلول طبيعية لحب الشباب وتوحيد اللون."
+  };
+
   return (
     <div className="bg-white">
+      <SEO 
+        title="السدر للوجه والجسم: نضارة وصفاء - سدر الجوري"
+        description="فوائد السدر للبشرة، ماسك السدر للوجه، وطريقة الاغتسال بالسدر للجسم. حلول طبيعية لحب الشباب وتوحيد اللون مع سدر الجوري."
+        keywords="السدر للوجه, السدر للجسم, ماسك السدر للوجه, فوائد السدر للبشرة, الاغتسال بالسدر, سدر وتوحيد اللون"
+        schema={schema}
+        canonicalUrl="https://sidraljouri.com/benefits/skin"
+      />
        <div className="relative bg-orange-50 py-12 border-b border-orange-100">
         <div className="max-w-4xl mx-auto px-4 text-center">
             <span className="text-orange-600 font-semibold tracking-wide uppercase text-sm">جمال طبيعي</span>

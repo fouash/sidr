@@ -1,6 +1,7 @@
 import React from 'react';
 import { Product } from '../types';
 import { ShoppingCart } from 'lucide-react';
+import { SEO } from './SEO';
 
 const products: Product[] = [
   {
@@ -60,8 +61,33 @@ const products: Product[] = [
 ];
 
 export const ProductList: React.FC = () => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": products.map((product, index) => ({
+      "@type": "Product",
+      "position": index + 1,
+      "name": product.name,
+      "description": product.description,
+      "image": product.image,
+      "offers": {
+        "@type": "Offer",
+        "price": product.price.replace(' ر.س', ''),
+        "priceCurrency": "SAR",
+        "availability": "https://schema.org/InStock"
+      }
+    }))
+  };
+
   return (
     <div className="bg-white py-12">
+      <SEO 
+        title="متجر منتجات السدر - سدر الجوري"
+        description="تسوقي أفضل منتجات السدر: بودرة سدر، ورق سدر، زيت السدر، شامبو طبيعي. منتجات عضوية 100% للعناية بجمالك."
+        keywords="شراء سدر, سدر مطحون, زيت السدر للشعر, شامبو سدر, متجر سدر"
+        schema={schema}
+        canonicalUrl="https://sidraljouri.com/products"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-base text-nature-600 font-semibold tracking-wide uppercase">متجرنا</h2>

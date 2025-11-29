@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Send, Bot, User, Loader2, Sparkles } from 'lucide-react';
 import { getGeminiResponse } from '../services/geminiService';
 import { ChatMessage } from '../types';
+import { SEO } from './SEO';
 
 export const AIExpert: React.FC = () => {
   const [input, setInput] = useState('');
@@ -56,6 +57,12 @@ export const AIExpert: React.FC = () => {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8 h-[calc(100vh-100px)] flex flex-col">
+      <SEO 
+        title="خبيرة الجمال (AI) - سدر الجوري"
+        description="استشيري خبيرة الجمال الذكية عن خلطات السدر، روتين العناية بالشعر، ونصائح الجمال الطبيعي مجاناً. إجابات فورية ودقيقة."
+        keywords="استشارة تجميل, خلطات شعر, ذكاء اصطناعي, سؤال وجواب تجميل, ماسكات طبيعية"
+        canonicalUrl="https://sidraljouri.com/expert"
+      />
       <div className="text-center mb-8">
          <div className="inline-flex items-center justify-center p-3 bg-nature-100 rounded-full mb-4">
             <Sparkles className="text-nature-600 h-8 w-8" />

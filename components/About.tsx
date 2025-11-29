@@ -1,8 +1,15 @@
 import React from 'react';
+import { SEO } from './SEO';
 
 export const About: React.FC = () => {
   return (
     <div className="bg-white">
+      <SEO 
+        title="قصتنا - سدر الجوري"
+        description="تعرفي على حكاية سدر الجوري، رحلتنا في استخلاص كنوز الطبيعة من شجرة السدر، وقيمنا في تقديم منتجات سدر عضوية ونقية 100%."
+        keywords="قصة سدر الجوري, من نحن, سدر عضوي, حصاد السدر"
+        canonicalUrl="https://sidraljouri.com/about"
+      />
       {/* Header section */}
       <div className="relative bg-nature-900 py-16 sm:py-24">
         <div className="absolute inset-0 overflow-hidden">

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, CheckCircle } from 'lucide-react';
+import { SEO } from './SEO';
 
 export const Contact: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -28,6 +29,11 @@ export const Contact: React.FC = () => {
 
   return (
     <div className="bg-white py-16 px-4 overflow-hidden sm:px-6 lg:px-8 lg:py-24">
+      <SEO 
+        title="تواصل معنا - سدر الجوري"
+        description="اتصلي بنا لطلبات الجملة أو الاستفسارات حول منتجات سدر الجوري للعناية الطبيعية."
+        canonicalUrl="https://sidraljouri.com/contact"
+      />
       <div className="relative max-w-xl mx-auto">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">تواصل معنا</h2>

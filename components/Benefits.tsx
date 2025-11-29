@@ -1,12 +1,19 @@
 import React from 'react';
 import { Leaf, Sparkles, TreeDeciduous, ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { SEO } from './SEO';
 
 export const Benefits: React.FC = () => {
   const navigate = useNavigate();
 
   return (
     <div className="bg-white">
+      <SEO 
+        title="مدونة فوائد السدر - سدر الجوري"
+        description="دليلك الشامل لفوائد شجرة السدر (النبق). مقالات مفصلة عن استخدام السدر للشعر، البشرة، وطرق الاستخدام التقليدية والحديثة."
+        keywords="مدونة السدر, فوائد النبق, معلومات عن السدر, jujube benefits, Sidr blog"
+        canonicalUrl="https://sidraljouri.com/benefits"
+      />
       {/* Hero for Benefits */}
       <div className="relative bg-nature-900 py-16 sm:py-24">
         <div className="absolute inset-0 overflow-hidden">

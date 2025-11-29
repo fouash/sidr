@@ -1,9 +1,34 @@
 import React from 'react';
 import { TreeDeciduous, Info, MapPin } from 'lucide-react';
+import { SEO } from './SEO';
 
 export const SidrGeneral: React.FC = () => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ماهو السدر (النبق)؟ معلومات شاملة",
+    "image": "https://images.unsplash.com/photo-1542601906990-b4d3fb7d5b1d?auto=format&fit=crop&q=80&w=1000",
+    "author": "سدر الجوري",
+    "publisher": {
+      "@type": "Organization",
+      "name": "سدر الجوري",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://sidraljouri.com/logo.png"
+      }
+    },
+    "description": "تعرفي على شجرة السدر (Jujube Tree)، أنواعها، ثمار النبق، وتاريخها في الطب الشعبي العربي والإسلامي."
+  };
+
   return (
     <div className="bg-white">
+      <SEO 
+        title="ماهو السدر (النبق)؟ معلومات شاملة - سدر الجوري"
+        description="تعرفي على شجرة السدر (Jujube Tree)، أنواعها، ثمار النبق، وتاريخها في الطب الشعبي العربي والإسلامي. كل ما تودين معرفته عن هذه الشجرة المباركة."
+        keywords="شجرة السدر, النبق, jujube tree, سدرة, ماهو السدر, Ziziphus Spina-Christi"
+        schema={schema}
+        canonicalUrl="https://sidraljouri.com/benefits/general"
+      />
       <div className="bg-nature-50 py-12 border-b border-nature-200">
         <div className="max-w-4xl mx-auto px-4 text-center">
             <span className="text-nature-600 font-semibold tracking-wide uppercase text-sm">معلومات عامة</span>
