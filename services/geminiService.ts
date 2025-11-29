@@ -1,12 +1,11 @@
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-
 export const getGeminiResponse = async (
   prompt: string, 
   history: { role: string; parts: { text: string }[] }[]
 ): Promise<string> => {
   try {
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
     const model = "gemini-2.5-flash";
     const systemInstruction = `
       أنت مساعد ذكي وخبير في "السدر الطبيعي" والعناية الشخصية لشركة "سدر الجوري".
@@ -57,6 +56,6 @@ export const getGeminiResponse = async (
     
   } catch (error) {
     console.error("Gemini API Error:", error);
-    return "عذراً، حدث خطأ تقني. يرجى المحاولة لاحقاً.";
+    return "عذراً، حدث خطأ تقني أو لم يتم تكوين مفتاح API بشكل صحيح.";
   }
 };
