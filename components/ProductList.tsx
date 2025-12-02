@@ -8,7 +8,7 @@ const products: Product[] = [
     id: 4,
     name: "بودرة السدر (للشعر والجسم)",
     weight: "250 جرام",
-    image: "https://images.unsplash.com/photo-1626015904764-a472c7727c0c?auto=format&fit=crop&q=80&w=600",
+    image: "https://images.unsplash.com/photo-1584589167171-541ce45f1eea?auto=format&fit=crop&q=80&w=600",
     description: "سدر مطحون ناعم جداً ومنقى من الشوائب. مثالي لماسكات الشعر والوجه.",
     features: ["طبيعي 100%", "طحن ناعم", "خالي من الأتربة"]
   },
@@ -16,7 +16,7 @@ const products: Product[] = [
     id: 5,
     name: "ورق سدر مجفف فاخر",
     weight: "200 جرام",
-    image: "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&q=80&w=600",
+    image: "https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5a?auto=format&fit=crop&q=80&w=600",
     description: "أوراق سدر خضراء مجففة بعناية في الظل للحفاظ على خواصها. تستخدم للمنقوع والاغتسال.",
     features: ["قطفة أولى", "تجفيف طبيعي", "نظيف ومنقى"]
   },
@@ -24,7 +24,7 @@ const products: Product[] = [
     id: 6,
     name: "زيت السدر المركز",
     weight: "120 مل",
-    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=600",
+    image: "https://images.unsplash.com/photo-1599447421405-0c307838241f?auto=format&fit=crop&q=80&w=600",
     description: "زيت سدر طبيعي معصور على البارد. يغذي فروة الرأس ويحفز نمو الشعر.",
     features: ["معصور على البارد", "مركز", "سريع الامتصاص"]
   },
@@ -32,7 +32,7 @@ const products: Product[] = [
     id: 7,
     name: "شامبو السدر الطبيعي",
     weight: "400 مل",
-    image: "https://images.unsplash.com/photo-1629198688000-71f23e745b6e?auto=format&fit=crop&q=80&w=600",
+    image: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&q=80&w=600",
     description: "شامبو بخلاصة السدر والأعشاب، خالي من السلفات والبارابين.",
     features: ["خالي من السلفات", "رغوة غنية", "لطيف على الشعر"]
   },
@@ -40,7 +40,7 @@ const products: Product[] = [
     id: 8,
     name: "باقة العناية المتكاملة",
     weight: "مجموعة",
-    image: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&q=80&w=600",
+    image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&q=80&w=600",
     description: "تحتوي على بودرة السدر، زيت السدر، وشامبو السدر بسعر توفيري.",
     features: ["توفير 15%", "روتين كامل", "هدية مثالية"]
   },
@@ -48,7 +48,7 @@ const products: Product[] = [
     id: 9,
     name: "مقشر السدر للجسم",
     weight: "300 جرام",
-    image: "https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?auto=format&fit=crop&q=80&w=600",
+    image: "https://images.unsplash.com/photo-1619451334792-150fd785ee74?auto=format&fit=crop&q=80&w=600",
     description: "مقشر طبيعي بالسدر والملح البحري والزيوت العطرية لنعومة فائقة.",
     features: ["تقشير وتفتيح", "رائحة منعشة", "ترطيب عميق"]
   }
