@@ -7,54 +7,48 @@ const products: Product[] = [
   {
     id: 4,
     name: "بودرة السدر (للشعر والجسم)",
-    price: "45 ر.س",
     weight: "250 جرام",
-    image: "https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?auto=format&fit=crop&q=80&w=600",
+    image: "https://images.unsplash.com/photo-1626015904764-a472c7727c0c?auto=format&fit=crop&q=80&w=600",
     description: "سدر مطحون ناعم جداً ومنقى من الشوائب. مثالي لماسكات الشعر والوجه.",
     features: ["طبيعي 100%", "طحن ناعم", "خالي من الأتربة"]
   },
   {
     id: 5,
     name: "ورق سدر مجفف فاخر",
-    price: "35 ر.س",
     weight: "200 جرام",
-    image: "https://images.unsplash.com/photo-1598512752271-33f913a5af13?auto=format&fit=crop&q=80&w=600",
+    image: "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&q=80&w=600",
     description: "أوراق سدر خضراء مجففة بعناية في الظل للحفاظ على خواصها. تستخدم للمنقوع والاغتسال.",
     features: ["قطفة أولى", "تجفيف طبيعي", "نظيف ومنقى"]
   },
   {
     id: 6,
     name: "زيت السدر المركز",
-    price: "85 ر.س",
     weight: "120 مل",
-    image: "https://images.unsplash.com/photo-1608248597279-f99d160bfbc8?auto=format&fit=crop&q=80&w=600",
+    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=600",
     description: "زيت سدر طبيعي معصور على البارد. يغذي فروة الرأس ويحفز نمو الشعر.",
     features: ["معصور على البارد", "مركز", "سريع الامتصاص"]
   },
   {
     id: 7,
     name: "شامبو السدر الطبيعي",
-    price: "65 ر.س",
     weight: "400 مل",
-    image: "https://images.unsplash.com/photo-1556228720-19277332ed14?auto=format&fit=crop&q=80&w=600",
+    image: "https://images.unsplash.com/photo-1629198688000-71f23e745b6e?auto=format&fit=crop&q=80&w=600",
     description: "شامبو بخلاصة السدر والأعشاب، خالي من السلفات والبارابين.",
     features: ["خالي من السلفات", "رغوة غنية", "لطيف على الشعر"]
   },
   {
     id: 8,
     name: "باقة العناية المتكاملة",
-    price: "180 ر.س",
     weight: "مجموعة",
-    image: "https://images.unsplash.com/photo-1556228852-eb04820879f5?auto=format&fit=crop&q=80&w=600",
+    image: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&q=80&w=600",
     description: "تحتوي على بودرة السدر، زيت السدر، وشامبو السدر بسعر توفيري.",
     features: ["توفير 15%", "روتين كامل", "هدية مثالية"]
   },
   {
     id: 9,
     name: "مقشر السدر للجسم",
-    price: "55 ر.س",
     weight: "300 جرام",
-    image: "https://images.unsplash.com/photo-1570194065650-d99fb4b8ccb0?auto=format&fit=crop&q=80&w=600",
+    image: "https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?auto=format&fit=crop&q=80&w=600",
     description: "مقشر طبيعي بالسدر والملح البحري والزيوت العطرية لنعومة فائقة.",
     features: ["تقشير وتفتيح", "رائحة منعشة", "ترطيب عميق"]
   }
@@ -72,8 +66,6 @@ export const ProductList: React.FC = () => {
       "image": product.image,
       "offers": {
         "@type": "Offer",
-        "price": product.price.replace(' ر.س', ''),
-        "priceCurrency": "SAR",
         "availability": "https://schema.org/InStock"
       }
     }))
@@ -81,7 +73,7 @@ export const ProductList: React.FC = () => {
 
   return (
     <div className="bg-white py-12">
-      <SEO 
+      <SEO
         title="متجر منتجات السدر - سدر الجوري"
         description="تسوقي أفضل منتجات السدر: بودرة سدر، ورق سدر، زيت السدر، شامبو طبيعي. منتجات عضوية 100% للعناية بجمالك."
         keywords="شراء سدر, سدر مطحون, زيت السدر للشعر, شامبو سدر, متجر سدر"
@@ -112,7 +104,7 @@ export const ProductList: React.FC = () => {
                   {product.weight}
                 </div>
               </div>
-              
+
               <div className="p-6 flex-1 flex flex-col">
                 <h3 className="text-lg font-bold text-gray-900 mb-2">
                   <a href="#">
@@ -121,7 +113,7 @@ export const ProductList: React.FC = () => {
                   </a>
                 </h3>
                 <p className="text-sm text-gray-500 mb-4 flex-grow">{product.description}</p>
-                
+
                 <ul className="text-xs text-gray-400 mb-4 space-y-1">
                   {product.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center">
@@ -131,8 +123,7 @@ export const ProductList: React.FC = () => {
                   ))}
                 </ul>
 
-                <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
-                  <p className="text-xl font-bold text-nature-600">{product.price}</p>
+                <div className="flex items-center justify-end mt-auto pt-4 border-t border-gray-100">
                   <button className="relative z-10 bg-gray-900 text-white p-2 rounded-lg hover:bg-nature-600 transition-colors">
                     <ShoppingCart size={20} />
                   </button>
