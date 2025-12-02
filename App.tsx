@@ -15,6 +15,10 @@ import { SidrBodyPage } from './components/SidrBodyPage';
 import { SidrRecipesPage } from './components/SidrRecipesPage';
 import { SidrGuidePage } from './components/SidrGuidePage';
 import { Contact } from './components/Contact';
+import { Blog } from './components/Blog';
+import { SidrHairGrowth } from './components/blog/SidrHairGrowth';
+import { SidrSkinAcne } from './components/blog/SidrSkinAcne';
+import { SidrBodyWhitening } from './components/blog/SidrBodyWhitening';
 import { Page } from './types';
 
 // Wrapper component to handle routing state within Layout
@@ -26,7 +30,7 @@ const AppContent: React.FC = () => {
   // Sync active page state
   useEffect(() => {
     const path = location.pathname;
-    
+
     switch (path) {
       case '/':
         setActivePage(Page.HOME);
@@ -65,6 +69,12 @@ const AppContent: React.FC = () => {
         break;
       case '/contact':
         setActivePage(Page.CONTACT);
+        break;
+      case '/blog':
+      case '/blog/hair-growth':
+      case '/blog/skin-acne':
+      case '/blog/body-whitening':
+        setActivePage(Page.BLOG);
         break;
       default:
         setActivePage(Page.HOME);
@@ -106,6 +116,9 @@ const AppContent: React.FC = () => {
       case Page.SIDR_GUIDE:
         navigate('/sidr-guide');
         break;
+      case Page.BLOG:
+        navigate('/blog');
+        break;
     }
     window.scrollTo(0, 0);
   };
@@ -127,6 +140,10 @@ const AppContent: React.FC = () => {
         <Route path="/sidr-body" element={<SidrBodyPage />} />
         <Route path="/sidr-recipes" element={<SidrRecipesPage />} />
         <Route path="/sidr-guide" element={<SidrGuidePage />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/hair-growth" element={<SidrHairGrowth />} />
+        <Route path="/blog/skin-acne" element={<SidrSkinAcne />} />
+        <Route path="/blog/body-whitening" element={<SidrBodyWhitening />} />
       </Routes>
     </Layout>
   );

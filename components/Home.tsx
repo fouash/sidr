@@ -24,8 +24,8 @@ export const Home: React.FC = () => {
 
   return (
     <>
-      <SEO 
-        title="سدر الجوري - الرئيسية للعناية الطبيعية" 
+      <SEO
+        title="سدر الجوري - الرئيسية للعناية الطبيعية"
         description="اكتشفي منتجات سدر الجوري الطبيعية للعناية بالشعر والبشرة. أجود أنواع السدر (Jujube)، زيوت طبيعية، وخلطات مضمونة للجمال."
         keywords="سدر, متجر سدر, عناية طبيعية, سدر الجوري, jujube shop, منتجات السدر"
         schema={schema}
@@ -33,23 +33,23 @@ export const Home: React.FC = () => {
       />
       <Hero onCtaClick={() => navigate('/products')} />
       <div className="py-12 bg-nature-50/50">
-          <div className="max-w-7xl mx-auto px-4 text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900">الأكثر طلباً</h2>
-          </div>
-          <ProductList />
-          <div className="text-center pb-8 pt-4">
-            <button onClick={() => navigate('/products')} className="text-nature-700 hover:text-nature-900 font-semibold underline text-lg">
-              تصفحي المتجر بالكامل
-            </button>
-          </div>
+        <div className="max-w-7xl mx-auto px-4 text-center mb-8">
+          <h2 className="text-3xl font-bold text-gray-900">الأكثر طلباً</h2>
+        </div>
+        <ProductList />
+        <div className="text-center pb-8 pt-4">
+          <button onClick={() => navigate('/products')} className="text-nature-700 hover:text-nature-900 font-semibold underline text-lg">
+            تصفحي المتجر بالكامل
+          </button>
+        </div>
       </div>
-      
+
       {/* Quick Links Section */}
       <div className="bg-gradient-to-br from-nature-50 to-green-50 py-16">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">اكتشفي عالم السدر</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div 
+            <div
               onClick={() => navigate('/sidr-hair')}
               className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all cursor-pointer transform hover:-translate-y-1 border-t-4 border-nature-500"
             >
@@ -57,8 +57,8 @@ export const Home: React.FC = () => {
               <h3 className="text-lg font-bold text-gray-900 mb-2">السدر للشعر</h3>
               <p className="text-gray-600 text-sm">تقوية، تطويل، وعلاج التساقط</p>
             </div>
-            
-            <div 
+
+            <div
               onClick={() => navigate('/sidr-skin')}
               className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all cursor-pointer transform hover:-translate-y-1 border-t-4 border-pink-500"
             >
@@ -66,8 +66,8 @@ export const Home: React.FC = () => {
               <h3 className="text-lg font-bold text-gray-900 mb-2">السدر للبشرة</h3>
               <p className="text-gray-600 text-sm">تنظيف، تفتيح، ونضارة طبيعية</p>
             </div>
-            
-            <div 
+
+            <div
               onClick={() => navigate('/sidr-body')}
               className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all cursor-pointer transform hover:-translate-y-1 border-t-4 border-green-500"
             >
@@ -75,8 +75,8 @@ export const Home: React.FC = () => {
               <h3 className="text-lg font-bold text-gray-900 mb-2">السدر للجسم</h3>
               <p className="text-gray-600 text-sm">استحمام منعش وعناية شاملة</p>
             </div>
-            
-            <div 
+
+            <div
               onClick={() => navigate('/sidr-recipes')}
               className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all cursor-pointer transform hover:-translate-y-1 border-t-4 border-amber-500"
             >
@@ -84,6 +84,44 @@ export const Home: React.FC = () => {
               <h3 className="text-lg font-bold text-gray-900 mb-2">وصفات وخلطات</h3>
               <p className="text-gray-600 text-sm">وصفات مجربة وخلطات طبيعية</p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Blog Teaser Section */}
+      <div className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">جديد المدونة</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+              <div className="h-48 bg-nature-100 flex items-center justify-center text-4xl">🌿</div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2 text-gray-900">السدر لتطويل الشعر</h3>
+                <p className="text-gray-600 mb-4 text-sm">الوصفة السحرية لنتائج سريعة ومضمونة</p>
+                <button onClick={() => navigate('/blog/hair-growth')} className="text-nature-600 font-semibold hover:text-nature-800">اقرأ المزيد ←</button>
+              </div>
+            </div>
+            <div className="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+              <div className="h-48 bg-pink-100 flex items-center justify-center text-4xl">✨</div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2 text-gray-900">علاج حب الشباب</h3>
+                <p className="text-gray-600 mb-4 text-sm">الحل الطبيعي النهائي للبشرة الدهنية</p>
+                <button onClick={() => navigate('/blog/skin-acne')} className="text-nature-600 font-semibold hover:text-nature-800">اقرأ المزيد ←</button>
+              </div>
+            </div>
+            <div className="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+              <div className="h-48 bg-green-100 flex items-center justify-center text-4xl">🛁</div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2 text-gray-900">تبييض الجسم</h3>
+                <p className="text-gray-600 mb-4 text-sm">خلطات السدر لتوحيد لون الجسم</p>
+                <button onClick={() => navigate('/blog/body-whitening')} className="text-nature-600 font-semibold hover:text-nature-800">اقرأ المزيد ←</button>
+              </div>
+            </div>
+          </div>
+          <div className="text-center mt-8">
+            <button onClick={() => navigate('/blog')} className="inline-block border-2 border-nature-600 text-nature-600 px-6 py-2 rounded-full font-bold hover:bg-nature-600 hover:text-white transition-colors">
+              عرض كل المقالات
+            </button>
           </div>
         </div>
       </div>

@@ -37,8 +37,8 @@ export const Layout: React.FC<LayoutProps> = ({ children, activePage, onNavigate
   const navItems = [
     { page: Page.HOME, label: 'الرئيسية' },
     { page: Page.PRODUCTS, label: 'المتجر' },
-    { 
-      page: Page.BENEFITS, 
+    {
+      page: Page.BENEFITS,
       label: 'فوائد السدر',
       subItems: [
         { page: Page.SIDR_HAIR, label: 'السدر للشعر' },
@@ -49,6 +49,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, activePage, onNavigate
       ]
     },
     { page: Page.EXPERT, label: 'خبيرة الجمال' },
+    { page: Page.BLOG, label: 'المدونة' },
     { page: Page.ABOUT, label: 'قصتنا' },
     { page: Page.CONTACT, label: 'تواصل معنا' },
   ];
@@ -60,8 +61,8 @@ export const Layout: React.FC<LayoutProps> = ({ children, activePage, onNavigate
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-50 bg-white">
           <div className="flex justify-between h-20 items-center">
             {/* Logo */}
-            <div 
-              className="flex items-center cursor-pointer group" 
+            <div
+              className="flex items-center cursor-pointer group"
               onClick={() => {
                 onNavigate(Page.HOME);
                 setIsMobileMenuOpen(false);
@@ -82,11 +83,10 @@ export const Layout: React.FC<LayoutProps> = ({ children, activePage, onNavigate
                 <div key={item.page} className="relative group">
                   <button
                     onClick={() => onNavigate(item.page)}
-                    className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
-                      activePage === item.page || (item.subItems && item.subItems.some(sub => sub.page === activePage))
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${activePage === item.page || (item.subItems && item.subItems.some(sub => sub.page === activePage))
                         ? 'text-nature-700 bg-nature-50'
                         : 'text-gray-600 hover:text-nature-600 hover:bg-gray-50'
-                    }`}
+                      }`}
                   >
                     {item.label}
                   </button>
@@ -97,11 +97,10 @@ export const Layout: React.FC<LayoutProps> = ({ children, activePage, onNavigate
                           <button
                             key={subItem.page}
                             onClick={() => onNavigate(subItem.page)}
-                            className={`w-full text-right px-4 py-2 text-sm hover:bg-nature-50 transition-colors ${
-                              activePage === subItem.page
+                            className={`w-full text-right px-4 py-2 text-sm hover:bg-nature-50 transition-colors ${activePage === subItem.page
                                 ? 'text-nature-700 bg-nature-50'
                                 : 'text-gray-600 hover:text-nature-600'
-                            }`}
+                              }`}
                           >
                             {subItem.label}
                           </button>
@@ -125,7 +124,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, activePage, onNavigate
 
             {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center gap-2">
-               <button className="text-gray-500 hover:text-nature-600 p-2 relative">
+              <button className="text-gray-500 hover:text-nature-600 p-2 relative">
                 <ShoppingBag size={24} />
               </button>
               <button
@@ -141,7 +140,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, activePage, onNavigate
 
         {/* Backdrop for Mobile Menu */}
         {isMobileMenuOpen && (
-          <div 
+          <div
             className="fixed inset-0 bg-black/50 z-40 md:hidden backdrop-blur-sm transition-opacity animate-fade-in"
             onClick={() => setIsMobileMenuOpen(false)}
             aria-hidden="true"
@@ -162,13 +161,11 @@ export const Layout: React.FC<LayoutProps> = ({ children, activePage, onNavigate
                     setIsMobileMenuOpen(false);
                   }}
                   style={{ transitionDelay: `${isMobileMenuOpen ? index * 50 : 0}ms` }}
-                  className={`flex items-center w-full text-right px-4 py-4 rounded-xl text-lg font-medium transition-all duration-300 transform ${
-                    isMobileMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
-                  } ${
-                    activePage === item.page || (item.subItems && item.subItems.some(sub => sub.page === activePage))
+                  className={`flex items-center w-full text-right px-4 py-4 rounded-xl text-lg font-medium transition-all duration-300 transform ${isMobileMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
+                    } ${activePage === item.page || (item.subItems && item.subItems.some(sub => sub.page === activePage))
                       ? 'text-nature-700 bg-nature-50 border border-nature-100'
                       : 'text-gray-600 hover:text-nature-600 hover:bg-gray-50'
-                  }`}
+                    }`}
                 >
                   {(activePage === item.page || (item.subItems && item.subItems.some(sub => sub.page === activePage))) && <Leaf size={16} className="ml-2 text-nature-600" />}
                   {item.label}
@@ -183,13 +180,11 @@ export const Layout: React.FC<LayoutProps> = ({ children, activePage, onNavigate
                           setIsMobileMenuOpen(false);
                         }}
                         style={{ transitionDelay: `${isMobileMenuOpen ? (index * 50) + (subIndex * 25) : 0}ms` }}
-                        className={`flex items-center w-full text-right px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 transform ${
-                          isMobileMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
-                        } ${
-                          activePage === subItem.page
+                        className={`flex items-center w-full text-right px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 transform ${isMobileMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
+                          } ${activePage === subItem.page
                             ? 'text-nature-700 bg-nature-100 border border-nature-200'
                             : 'text-gray-500 hover:text-nature-600 hover:bg-gray-50'
-                        }`}
+                          }`}
                       >
                         {activePage === subItem.page && <div className="w-2 h-2 bg-nature-600 rounded-full ml-2" />}
                         {subItem.label}
@@ -199,26 +194,25 @@ export const Layout: React.FC<LayoutProps> = ({ children, activePage, onNavigate
                 )}
               </div>
             ))}
-             
-             {/* Mobile Extra Actions */}
-             <div 
-               style={{ transitionDelay: `${isMobileMenuOpen ? navItems.length * 50 : 0}ms` }}
-               className={`pt-4 mt-4 border-t border-gray-100 grid grid-cols-2 gap-4 transition-all duration-300 transform ${
-                 isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-               }`}
-             >
-                <button className="flex flex-col items-center justify-center p-3 rounded-lg hover:bg-gray-50 text-gray-600 hover:text-nature-600 transition-colors">
-                    <div className="bg-gray-100 p-2 rounded-full mb-2">
-                        <ShoppingBag size={20} />
-                    </div>
-                    <span className="text-sm font-medium">سلة المشتريات</span>
-                </button>
-                <button className="flex flex-col items-center justify-center p-3 rounded-lg hover:bg-gray-50 text-gray-600 hover:text-nature-600 transition-colors">
-                    <div className="bg-gray-100 p-2 rounded-full mb-2">
-                        <User size={20} />
-                    </div>
-                    <span className="text-sm font-medium">حسابي</span>
-                </button>
+
+            {/* Mobile Extra Actions */}
+            <div
+              style={{ transitionDelay: `${isMobileMenuOpen ? navItems.length * 50 : 0}ms` }}
+              className={`pt-4 mt-4 border-t border-gray-100 grid grid-cols-2 gap-4 transition-all duration-300 transform ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
+            >
+              <button className="flex flex-col items-center justify-center p-3 rounded-lg hover:bg-gray-50 text-gray-600 hover:text-nature-600 transition-colors">
+                <div className="bg-gray-100 p-2 rounded-full mb-2">
+                  <ShoppingBag size={20} />
+                </div>
+                <span className="text-sm font-medium">سلة المشتريات</span>
+              </button>
+              <button className="flex flex-col items-center justify-center p-3 rounded-lg hover:bg-gray-50 text-gray-600 hover:text-nature-600 transition-colors">
+                <div className="bg-gray-100 p-2 rounded-full mb-2">
+                  <User size={20} />
+                </div>
+                <span className="text-sm font-medium">حسابي</span>
+              </button>
             </div>
           </div>
         </div>
@@ -235,9 +229,9 @@ export const Layout: React.FC<LayoutProps> = ({ children, activePage, onNavigate
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center mb-4">
-                 <div className="bg-nature-600 p-2 rounded-full text-white ml-2">
-                    <Leaf size={20} />
-                  </div>
+                <div className="bg-nature-600 p-2 rounded-full text-white ml-2">
+                  <Leaf size={20} />
+                </div>
                 <h2 className="text-xl font-bold text-white">سدر الجوري</h2>
               </div>
               <p className="text-nature-200 max-w-sm text-sm leading-relaxed">
