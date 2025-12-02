@@ -37,7 +37,17 @@ export const Layout: React.FC<LayoutProps> = ({ children, activePage, onNavigate
   const navItems = [
     { page: Page.HOME, label: 'الرئيسية' },
     { page: Page.PRODUCTS, label: 'المتجر' },
-    { page: Page.BENEFITS, label: 'فوائد السدر' },
+    { 
+      page: Page.BENEFITS, 
+      label: 'فوائد السدر',
+      subItems: [
+        { page: Page.SIDR_HAIR, label: 'السدر للشعر' },
+        { page: Page.SIDR_SKIN, label: 'السدر للبشرة' },
+        { page: Page.SIDR_BODY, label: 'السدر للجسم' },
+        { page: Page.SIDR_RECIPES, label: 'وصفات وخلطات' },
+        { page: Page.SIDR_GUIDE, label: 'دليل السدر الشامل' },
+      ]
+    },
     { page: Page.EXPERT, label: 'خبيرة الجمال' },
     { page: Page.ABOUT, label: 'قصتنا' },
     { page: Page.CONTACT, label: 'تواصل معنا' },
@@ -69,17 +79,37 @@ export const Layout: React.FC<LayoutProps> = ({ children, activePage, onNavigate
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8 space-x-reverse">
               {navItems.map((item) => (
-                <button
-                  key={item.page}
-                  onClick={() => onNavigate(item.page)}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
-                    activePage === item.page
-                      ? 'text-nature-700 bg-nature-50'
-                      : 'text-gray-600 hover:text-nature-600 hover:bg-gray-50'
-                  }`}
-                >
-                  {item.label}
-                </button>
+                <div key={item.page} className="relative group">
+                  <button
+                    onClick={() => onNavigate(item.page)}
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                      activePage === item.page || (item.subItems && item.subItems.some(sub => sub.page === activePage))
+                        ? 'text-nature-700 bg-nature-50'
+                        : 'text-gray-600 hover:text-nature-600 hover:bg-gray-50'
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                  {item.subItems && (
+                    <div className="absolute top-full right-0 mt-1 w-56 bg-white rounded-lg shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                      <div className="py-2">
+                        {item.subItems.map((subItem) => (
+                          <button
+                            key={subItem.page}
+                            onClick={() => onNavigate(subItem.page)}
+                            className={`w-full text-right px-4 py-2 text-sm hover:bg-nature-50 transition-colors ${
+                              activePage === subItem.page
+                                ? 'text-nature-700 bg-nature-50'
+                                : 'text-gray-600 hover:text-nature-600'
+                            }`}
+                          >
+                            {subItem.label}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
               ))}
             </div>
 
@@ -125,24 +155,49 @@ export const Layout: React.FC<LayoutProps> = ({ children, activePage, onNavigate
         `}>
           <div className="px-4 py-6 space-y-2 max-h-[calc(100vh-80px)] overflow-y-auto">
             {navItems.map((item, index) => (
-              <button
-                key={item.page}
-                onClick={() => {
-                  onNavigate(item.page);
-                  setIsMobileMenuOpen(false);
-                }}
-                style={{ transitionDelay: `${isMobileMenuOpen ? index * 50 : 0}ms` }}
-                className={`flex items-center w-full text-right px-4 py-4 rounded-xl text-lg font-medium transition-all duration-300 transform ${
-                  isMobileMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
-                } ${
-                  activePage === item.page
-                    ? 'text-nature-700 bg-nature-50 border border-nature-100'
-                    : 'text-gray-600 hover:text-nature-600 hover:bg-gray-50'
-                }`}
-              >
-                {activePage === item.page && <Leaf size={16} className="ml-2 text-nature-600" />}
-                {item.label}
-              </button>
+              <div key={item.page}>
+                <button
+                  onClick={() => {
+                    onNavigate(item.page);
+                    setIsMobileMenuOpen(false);
+                  }}
+                  style={{ transitionDelay: `${isMobileMenuOpen ? index * 50 : 0}ms` }}
+                  className={`flex items-center w-full text-right px-4 py-4 rounded-xl text-lg font-medium transition-all duration-300 transform ${
+                    isMobileMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
+                  } ${
+                    activePage === item.page || (item.subItems && item.subItems.some(sub => sub.page === activePage))
+                      ? 'text-nature-700 bg-nature-50 border border-nature-100'
+                      : 'text-gray-600 hover:text-nature-600 hover:bg-gray-50'
+                  }`}
+                >
+                  {(activePage === item.page || (item.subItems && item.subItems.some(sub => sub.page === activePage))) && <Leaf size={16} className="ml-2 text-nature-600" />}
+                  {item.label}
+                </button>
+                {item.subItems && (
+                  <div className="mr-4 mt-2 space-y-1">
+                    {item.subItems.map((subItem, subIndex) => (
+                      <button
+                        key={subItem.page}
+                        onClick={() => {
+                          onNavigate(subItem.page);
+                          setIsMobileMenuOpen(false);
+                        }}
+                        style={{ transitionDelay: `${isMobileMenuOpen ? (index * 50) + (subIndex * 25) : 0}ms` }}
+                        className={`flex items-center w-full text-right px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 transform ${
+                          isMobileMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
+                        } ${
+                          activePage === subItem.page
+                            ? 'text-nature-700 bg-nature-100 border border-nature-200'
+                            : 'text-gray-500 hover:text-nature-600 hover:bg-gray-50'
+                        }`}
+                      >
+                        {activePage === subItem.page && <div className="w-2 h-2 bg-nature-600 rounded-full ml-2" />}
+                        {subItem.label}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
              
              {/* Mobile Extra Actions */}
@@ -193,8 +248,9 @@ export const Layout: React.FC<LayoutProps> = ({ children, activePage, onNavigate
               <h3 className="text-white font-bold mb-4">روابط سريعة</h3>
               <ul className="space-y-2 text-sm">
                 <li><button onClick={() => onNavigate(Page.PRODUCTS)} className="hover:text-white transition-colors">منتجاتنا</button></li>
-                <li><button onClick={() => onNavigate(Page.BENEFITS)} className="hover:text-white transition-colors">فوائد السدر</button></li>
-                <li><button onClick={() => onNavigate(Page.ABOUT)} className="hover:text-white transition-colors">قصتنا</button></li>
+                <li><button onClick={() => onNavigate(Page.SIDR_HAIR)} className="hover:text-white transition-colors">السدر للشعر</button></li>
+                <li><button onClick={() => onNavigate(Page.SIDR_SKIN)} className="hover:text-white transition-colors">السدر للبشرة</button></li>
+                <li><button onClick={() => onNavigate(Page.SIDR_RECIPES)} className="hover:text-white transition-colors">وصفات وخلطات</button></li>
                 <li><button onClick={() => onNavigate(Page.EXPERT)} className="hover:text-white transition-colors">خبيرة الجمال</button></li>
               </ul>
             </div>

@@ -44,6 +44,50 @@ export const Home: React.FC = () => {
           </div>
       </div>
       
+      {/* Quick Links Section */}
+      <div className="bg-gradient-to-br from-nature-50 to-green-50 py-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">اكتشفي عالم السدر</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div 
+              onClick={() => navigate('/sidr-hair')}
+              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all cursor-pointer transform hover:-translate-y-1 border-t-4 border-nature-500"
+            >
+              <div className="text-nature-600 text-3xl mb-4">💇‍♀️</div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">السدر للشعر</h3>
+              <p className="text-gray-600 text-sm">تقوية، تطويل، وعلاج التساقط</p>
+            </div>
+            
+            <div 
+              onClick={() => navigate('/sidr-skin')}
+              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all cursor-pointer transform hover:-translate-y-1 border-t-4 border-pink-500"
+            >
+              <div className="text-pink-600 text-3xl mb-4">🌸</div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">السدر للبشرة</h3>
+              <p className="text-gray-600 text-sm">تنظيف، تفتيح، ونضارة طبيعية</p>
+            </div>
+            
+            <div 
+              onClick={() => navigate('/sidr-body')}
+              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all cursor-pointer transform hover:-translate-y-1 border-t-4 border-green-500"
+            >
+              <div className="text-green-600 text-3xl mb-4">🛁</div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">السدر للجسم</h3>
+              <p className="text-gray-600 text-sm">استحمام منعش وعناية شاملة</p>
+            </div>
+            
+            <div 
+              onClick={() => navigate('/sidr-recipes')}
+              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all cursor-pointer transform hover:-translate-y-1 border-t-4 border-amber-500"
+            >
+              <div className="text-amber-600 text-3xl mb-4">📜</div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">وصفات وخلطات</h3>
+              <p className="text-gray-600 text-sm">وصفات مجربة وخلطات طبيعية</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* AI Teaser Section */}
       <div className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,12 +101,20 @@ export const Home: React.FC = () => {
                 <p className="mt-4 text-lg leading-6 text-nature-100">
                   سواء كنتِ تبحثين عن طريقة عجن الحناء بالسدر، أو أفضل زيت لتطويل الشعر، مساعدنا الذكي يجيبك فوراً بأفضل النصائح.
                 </p>
-                <button
-                  onClick={() => navigate('/expert')}
-                  className="mt-8 bg-white border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-nature-600 hover:bg-nature-50"
-                >
-                  اسألي الخبيرة الآن
-                </button>
+                <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                  <button
+                    onClick={() => navigate('/expert')}
+                    className="bg-white border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-nature-600 hover:bg-nature-50"
+                  >
+                    اسألي الخبيرة الآن
+                  </button>
+                  <button
+                    onClick={() => navigate('/sidr-guide')}
+                    className="bg-nature-700 border border-nature-500 rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-white hover:bg-nature-800"
+                  >
+                    دليل السدر الشامل
+                  </button>
+                </div>
               </div>
             </div>
             <div className="-mt-6 aspect-w-5 aspect-h-3 md:aspect-w-2 md:aspect-h-1">

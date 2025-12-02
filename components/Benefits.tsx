@@ -28,27 +28,10 @@ export const Benefits: React.FC = () => {
 
       {/* Navigation Cards */}
       <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            {/* Card 1: The Tree */}
-            <div className="bg-white rounded-2xl shadow-lg border border-nature-100 overflow-hidden hover:shadow-xl transition-shadow cursor-pointer flex flex-col" onClick={() => navigate('/benefits/general')}>
-                <div className="h-48 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1598512752271-33f913a5af13?auto=format&fit=crop&q=80" alt="شجرة السدر" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"/>
-                </div>
-                <div className="p-6 flex-1 flex flex-col">
-                    <div className="flex items-center mb-3">
-                        <TreeDeciduous className="text-nature-600 ml-2" />
-                        <h3 className="text-xl font-bold text-gray-900">شجرة السدر (النبق)</h3>
-                    </div>
-                    <p className="text-gray-600 mb-4 flex-grow">تعرفي على شجرة السدر المباركة، تاريخها، وأنواعها المختلفة.</p>
-                    <span className="text-nature-600 font-bold flex items-center mt-auto">
-                        اقرأ المزيد <ArrowLeft size={16} className="mr-2" />
-                    </span>
-                </div>
-            </div>
-
-            {/* Card 2: Hair Care */}
-            <div className="bg-white rounded-2xl shadow-lg border border-nature-100 overflow-hidden hover:shadow-xl transition-shadow cursor-pointer flex flex-col" onClick={() => navigate('/benefits/hair')}>
+            {/* Card 1: Hair Care */}
+            <div className="bg-white rounded-2xl shadow-lg border border-nature-100 overflow-hidden hover:shadow-xl transition-shadow cursor-pointer flex flex-col" onClick={() => navigate('/sidr-hair')}>
                 <div className="h-48 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1595156829732-4d6d67425178?auto=format&fit=crop&q=80" alt="السدر للشعر" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"/>
                 </div>
@@ -57,25 +40,93 @@ export const Benefits: React.FC = () => {
                         <Leaf className="text-nature-600 ml-2" />
                         <h3 className="text-xl font-bold text-gray-900">السدر للشعر</h3>
                     </div>
-                    <p className="text-gray-600 mb-4 flex-grow">أفضل الخلطات والزيوت لتكثيف الشعر، علاج القشرة، واستخدام الشامبو الطبيعي.</p>
+                    <p className="text-gray-600 mb-4 flex-grow">دليل شامل لاستخدام السدر لتقوية وتطويل الشعر، علاج التساقط والقشرة، وأفضل الخلطات الطبيعية.</p>
                     <span className="text-nature-600 font-bold flex items-center mt-auto">
                         اقرأ المزيد <ArrowLeft size={16} className="mr-2" />
                     </span>
                 </div>
             </div>
 
-            {/* Card 3: Skin Care */}
-            <div className="bg-white rounded-2xl shadow-lg border border-nature-100 overflow-hidden hover:shadow-xl transition-shadow cursor-pointer flex flex-col" onClick={() => navigate('/benefits/skin')}>
+            {/* Card 2: Skin Care */}
+            <div className="bg-white rounded-2xl shadow-lg border border-nature-100 overflow-hidden hover:shadow-xl transition-shadow cursor-pointer flex flex-col" onClick={() => navigate('/sidr-skin')}>
                 <div className="h-48 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1570194065650-d99fb4b8ccb0?auto=format&fit=crop&q=80" alt="السدر للبشرة" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"/>
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
                     <div className="flex items-center mb-3">
                         <Sparkles className="text-nature-600 ml-2" />
-                        <h3 className="text-xl font-bold text-gray-900">السدر للوجه والجسم</h3>
+                        <h3 className="text-xl font-bold text-gray-900">السدر للبشرة</h3>
                     </div>
-                    <p className="text-gray-600 mb-4 flex-grow">فوائد الاغتسال بالسدر، ماسكات الوجه، وتقشير الجسم لنعومة فائقة.</p>
+                    <p className="text-gray-600 mb-4 flex-grow">اكتشفي فوائد السدر للوجه والبشرة، ماسكات التفتيح والتنظيف، وطرق العناية الطبيعية.</p>
                     <span className="text-nature-600 font-bold flex items-center mt-auto">
+                        اقرأ المزيد <ArrowLeft size={16} className="mr-2" />
+                    </span>
+                </div>
+            </div>
+
+            {/* Card 3: Body Care */}
+            <div className="bg-white rounded-2xl shadow-lg border border-nature-100 overflow-hidden hover:shadow-xl transition-shadow cursor-pointer flex flex-col" onClick={() => navigate('/sidr-body')}>
+                <div className="h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80" alt="السدر للجسم" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"/>
+                </div>
+                <div className="p-6 flex-1 flex flex-col">
+                    <div className="flex items-center mb-3">
+                        <TreeDeciduous className="text-nature-600 ml-2" />
+                        <h3 className="text-xl font-bold text-gray-900">السدر للجسم</h3>
+                    </div>
+                    <p className="text-gray-600 mb-4 flex-grow">تعلمي طرق الاستحمام بالسدر، العناية بالجسم، والحصول على بشرة ناعمة ومنعشة طبيعياً.</p>
+                    <span className="text-nature-600 font-bold flex items-center mt-auto">
+                        اقرأ المزيد <ArrowLeft size={16} className="mr-2" />
+                    </span>
+                </div>
+            </div>
+
+            {/* Card 4: Recipes */}
+            <div className="bg-white rounded-2xl shadow-lg border border-nature-100 overflow-hidden hover:shadow-xl transition-shadow cursor-pointer flex flex-col" onClick={() => navigate('/sidr-recipes')}>
+                <div className="h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&q=80" alt="وصفات السدر" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"/>
+                </div>
+                <div className="p-6 flex-1 flex flex-col">
+                    <div className="flex items-center mb-3">
+                        <Sparkles className="text-amber-600 ml-2" />
+                        <h3 className="text-xl font-bold text-gray-900">وصفات وخلطات السدر</h3>
+                    </div>
+                    <p className="text-gray-600 mb-4 flex-grow">مجموعة شاملة من الوصفات المجربة والخلطات الطبيعية بالسدر للشعر والبشرة والجسم.</p>
+                    <span className="text-amber-600 font-bold flex items-center mt-auto">
+                        اقرأ المزيد <ArrowLeft size={16} className="mr-2" />
+                    </span>
+                </div>
+            </div>
+
+            {/* Card 5: Complete Guide */}
+            <div className="bg-white rounded-2xl shadow-lg border border-nature-100 overflow-hidden hover:shadow-xl transition-shadow cursor-pointer flex flex-col" onClick={() => navigate('/sidr-guide')}>
+                <div className="h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1598512752271-33f913a5af13?auto=format&fit=crop&q=80" alt="دليل السدر" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"/>
+                </div>
+                <div className="p-6 flex-1 flex flex-col">
+                    <div className="flex items-center mb-3">
+                        <TreeDeciduous className="text-indigo-600 ml-2" />
+                        <h3 className="text-xl font-bold text-gray-900">دليل السدر الشامل</h3>
+                    </div>
+                    <p className="text-gray-600 mb-4 flex-grow">كل ما تحتاجين معرفته عن السدر - الأنواع، الفوائد، طرق الاستخدام، ونصائح الخبراء.</p>
+                    <span className="text-indigo-600 font-bold flex items-center mt-auto">
+                        اقرأ المزيد <ArrowLeft size={16} className="mr-2" />
+                    </span>
+                </div>
+            </div>
+
+            {/* Card 6: General Benefits */}
+            <div className="bg-white rounded-2xl shadow-lg border border-nature-100 overflow-hidden hover:shadow-xl transition-shadow cursor-pointer flex flex-col" onClick={() => navigate('/benefits/general')}>
+                <div className="h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb7d5b1d?auto=format&fit=crop&q=80" alt="شجرة السدر" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"/>
+                </div>
+                <div className="p-6 flex-1 flex flex-col">
+                    <div className="flex items-center mb-3">
+                        <Leaf className="text-green-600 ml-2" />
+                        <h3 className="text-xl font-bold text-gray-900">شجرة السدر المباركة</h3>
+                    </div>
+                    <p className="text-gray-600 mb-4 flex-grow">تعرفي على شجرة السدر المباركة، تاريخها، وفوائدها العامة في التراث والطب الشعبي.</p>
+                    <span className="text-green-600 font-bold flex items-center mt-auto">
                         اقرأ المزيد <ArrowLeft size={16} className="mr-2" />
                     </span>
                 </div>
@@ -88,9 +139,23 @@ export const Benefits: React.FC = () => {
       <div className="bg-nature-50 py-12">
           <div className="max-w-4xl mx-auto px-4 text-center">
               <h2 className="text-2xl font-bold text-nature-800 mb-4">لماذا السدر؟</h2>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed mb-6">
                   السدر ليس مجرد نبات، بل هو صيدلية طبيعية متكاملة. سواء كنتِ تبحثين عن <strong>علاج لتساقط الشعر</strong>، أو ترغبين في <strong>بشرة صافية</strong>، فإن منتجات السدر الطبيعية (ورق، بودرة، زيت) هي الخيار الأمثل والآمن بعيداً عن المواد الكيميائية.
               </p>
+              <div className="grid md:grid-cols-3 gap-6 mt-8">
+                <div className="bg-white rounded-lg p-4 shadow-sm">
+                  <h3 className="font-bold text-nature-700 mb-2">للشعر</h3>
+                  <p className="text-sm text-gray-600">تقوية، تطويل، علاج التساقط والقشرة</p>
+                </div>
+                <div className="bg-white rounded-lg p-4 shadow-sm">
+                  <h3 className="font-bold text-pink-700 mb-2">للبشرة</h3>
+                  <p className="text-sm text-gray-600">تنظيف، تفتيح، ترطيب، مكافحة الشيخوخة</p>
+                </div>
+                <div className="bg-white rounded-lg p-4 shadow-sm">
+                  <h3 className="font-bold text-green-700 mb-2">للجسم</h3>
+                  <p className="text-sm text-gray-600">استحمام منعش، نعومة، حماية طبيعية</p>
+                </div>
+              </div>
           </div>
       </div>
     </div>
